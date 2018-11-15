@@ -76,9 +76,9 @@ class GameScene: SKScene {
     currentScore.fontColor = SKColor.white
     self.addChild(currentScore)
 
-    var width = frame.size.width - 200
-    var height = frame.size.height - 300
-    var rect = CGRect(x: -width / 2, y: -height / 2, width: width, height: height)
+    let width = frame.size.width - 200
+    let height = frame.size.height - 300
+    let rect = CGRect(x: -width / 2, y: -height / 2, width: width, height: height)
     gameBG = SKShapeNode(rect: rect, cornerRadius: 0.02)
     gameBG.fillColor = SKColor.darkGray
     gameBG.zPosition = 2
@@ -174,7 +174,7 @@ class GameScene: SKScene {
         gameLogo.zPosition = 1
         gameLogo.position = CGPoint(x: 0, y: (frame.size.height / 2) - 200)
         gameLogo.fontSize = 60
-        gameLogo.text = "SNAKE"
+        gameLogo.text = "The Slithery Snake"
         gameLogo.fontColor = SKColor.red
         self.addChild(gameLogo)
         //5 - Create best score label
@@ -182,7 +182,7 @@ class GameScene: SKScene {
         bestScore.zPosition = 1
         bestScore.position = CGPoint(x: 0, y: gameLogo.position.y - 50)
         bestScore.fontSize = 40
-        bestScore.text = "Best Score: 0"
+        bestScore.text = "Best Score: \(UserDefaults.standard.integer(forKey: "bestScore"))"
         bestScore.fontColor = SKColor.white
         self.addChild(bestScore)
         //6 - Create play button
