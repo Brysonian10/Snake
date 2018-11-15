@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class GameManager
+public class GameManager
 {
     var nextTime: Double?
     var timeExtension: Double = 0.15
@@ -92,6 +92,9 @@ class GameManager
                 }
             }
     }
+    
+    }
+    
     //init game view and player
     func initGame()
     {
@@ -103,12 +106,12 @@ class GameManager
         
         generateNewPoint()
     }
-        
-        private func generateNewPoint() {
-            let randomX = CGFloat(arc4random_uniform(19))
-            let randomY = CGFloat(arc4random_uniform(39))
-            scene.scorePos = CGPoint(x: randomX, y: randomY)
-        }
+    
+    func generateNewPoint() {
+        let randomX = CGFloat(arc4random_uniform(19))
+        let randomY = CGFloat(arc4random_uniform(39))
+        scene.scorePos = CGPoint(x: randomX, y: randomY)
+    }
     
     func renderChange()
     {
@@ -131,8 +134,7 @@ class GameManager
     
     func contains(a: [(Int, Int)], v: (Int, Int)) -> Bool{
         let (c1, c2) = v
-        for (v1, v2) in a { if v1 == c1 && v2 ==  c2 {return true} }
+        for (v1, v2) in a { if v1 == c1 && v2 ==  c2 { return true } }
         return false
-        }
     }
 }

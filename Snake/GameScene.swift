@@ -85,7 +85,7 @@ class GameScene: SKScene {
     gameBG.isHidden = true
     self.addChild(gameBG)
     
-    createGameBoard(width: width, height: height)
+    createGameBoard(width: Int(width), height: Int(height))
     
     }
     //creates a game board, initialize array of cells
@@ -163,7 +163,7 @@ class GameScene: SKScene {
             self.gameBG.run(SKAction.scale(to: 1, duration: 0.4))
             self.currentScore.run(SKAction.scale(to: 1, duration: 0.4))
             //new code
-        self.game.initGame()
+            self.game.initGame()
         }
     }
     
